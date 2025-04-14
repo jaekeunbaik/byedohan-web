@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Code } from 'lucide-react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import { useState, useEffect } from "react";
+import { Menu, X, Moon, Sun, Code } from "lucide-react";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -11,32 +11,32 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const isDark = localStorage.getItem('darkMode') === 'true';
+    const isDark = localStorage.getItem("darkMode") === "true";
     setDarkMode(isDark);
-    document.documentElement.classList.toggle('dark', isDark);
+    document.documentElement.classList.toggle("dark", isDark);
   }, []);
 
   const toggleDark = () => {
     const newMode = !darkMode;
     setDarkMode(newMode);
-    localStorage.setItem('darkMode', String(newMode));
-    document.documentElement.classList.toggle('dark', newMode);
+    localStorage.setItem("darkMode", String(newMode));
+    document.documentElement.classList.toggle("dark", newMode);
   };
 
   useEffect(() => {
     const onScroll = () => {
       setScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white dark:bg-gray-800 shadow-md py-2'
-          : 'bg-transparent py-4'
+          ? "bg-white dark:bg-gray-800 shadow-md py-2"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -49,19 +49,17 @@ const Header = () => {
 
         {/* 데스크탑 메뉴 */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
-          {['about', 'skills', 'projects', 'contact'].map((id) => (
+          {["about", "playground", "contact"].map((id) => (
             <a
               key={id}
               href={`/${id}`}
               className="hover:text-blue-600 dark:hover:text-blue-400 transition"
             >
-              {id === 'about'
-                ? '소개'
-                : id === 'skills'
-                ? '기술 스택'
-                : id === 'projects'
-                ? '프로젝트'
-                : '연락처'}
+              {id === "about"
+                ? "소개"
+                : id === "playground"
+                ? "놀이터"
+                : "연락처"}
             </a>
           ))}
 
@@ -110,25 +108,23 @@ const Header = () => {
       {mobileOpen && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
+          animate={{ opacity: 1, height: "auto" }}
           exit={{ opacity: 0, height: 0 }}
           transition={{ duration: 0.3 }}
           className="md:hidden bg-white dark:bg-gray-800 px-6 py-4 space-y-2 shadow-md"
         >
-          {['about', 'skills', 'projects', 'contact'].map((id) => (
+          {["about", "playground", "contact"].map((id) => (
             <a
               key={id}
               href={`/${id}`}
               onClick={() => setMobileOpen(false)}
               className="block py-2 font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             >
-              {id === 'about'
-                ? '소개'
-                : id === 'skills'
-                ? '기술 스택'
-                : id === 'projects'
-                ? '프로젝트'
-                : '연락처'}
+              {id === "about"
+                ? "소개"
+                : id === "playground"
+                ? "놀이터"
+                : "연락처"}
             </a>
           ))}
 
