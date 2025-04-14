@@ -50,26 +50,57 @@ const Header = () => {
         {/* 데스크탑 메뉴 */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
           {['about', 'skills', 'projects', 'contact'].map((id) => (
-            <Link key={id} href={`#${id}`} scroll={false} className="hover:text-blue-600 dark:hover:text-blue-400 transition">
-              {id === 'about' ? '소개' : id === 'skills' ? '기술 스택' : id === 'projects' ? '프로젝트' : '연락처'}
-            </Link>
+            <a
+              key={id}
+              href={`/${id}`}
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >
+              {id === 'about'
+                ? '소개'
+                : id === 'skills'
+                ? '기술 스택'
+                : id === 'projects'
+                ? '프로젝트'
+                : '연락처'}
+            </a>
           ))}
 
-          <button onClick={toggleDark} className="ml-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            {darkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} className="text-gray-600" />}
+          <button
+            onClick={toggleDark}
+            className="ml-2 p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            {darkMode ? (
+              <Sun size={18} className="text-yellow-400" />
+            ) : (
+              <Moon size={18} className="text-gray-600" />
+            )}
           </button>
 
-          <Link href="/resume.pdf" target="_blank" className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium">
+          <Link
+            href="/resume.pdf"
+            target="_blank"
+            className="ml-2 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors font-medium"
+          >
             이력서
           </Link>
         </nav>
 
         {/* 모바일 메뉴 버튼 */}
         <div className="md:hidden flex items-center">
-          <button onClick={toggleDark} className="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-            {darkMode ? <Sun size={18} className="text-yellow-400" /> : <Moon size={18} className="text-gray-600" />}
+          <button
+            onClick={toggleDark}
+            className="p-2 mr-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+          >
+            {darkMode ? (
+              <Sun size={18} className="text-yellow-400" />
+            ) : (
+              <Moon size={18} className="text-gray-600" />
+            )}
           </button>
-          <button onClick={() => setMobileOpen(!mobileOpen)} className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+          >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -85,15 +116,20 @@ const Header = () => {
           className="md:hidden bg-white dark:bg-gray-800 px-6 py-4 space-y-2 shadow-md"
         >
           {['about', 'skills', 'projects', 'contact'].map((id) => (
-            <Link
+            <a
               key={id}
-              href={`#${id}`}
-              scroll={false}
+              href={`/${id}`}
               onClick={() => setMobileOpen(false)}
               className="block py-2 font-medium text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
             >
-              {id === 'about' ? '소개' : id === 'skills' ? '기술 스택' : id === 'projects' ? '프로젝트' : '연락처'}
-            </Link>
+              {id === 'about'
+                ? '소개'
+                : id === 'skills'
+                ? '기술 스택'
+                : id === 'projects'
+                ? '프로젝트'
+                : '연락처'}
+            </a>
           ))}
 
           <Link
