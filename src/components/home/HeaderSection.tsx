@@ -3,8 +3,8 @@ import { Github, Linkedin, Mail } from 'lucide-react';
 const HeaderSection = () => {
   return (
     <header className="py-20 text-center transition-opacity duration-1000 ease-in-out opacity-100">
-      <h1 className="text-5xl font-bold mb-4">홍길동</h1>
-      <h2 className="text-2xl text-blue-600 dark:text-blue-400 mb-6">프론트엔드 개발자</h2>
+      <h1 className="text-5xl font-bold mb-4">EDOHAN</h1>
+      <h2 className="text-2xl text-blue-600 dark:text-blue-400 mb-6">BACKEND 개발자</h2>
       <div className="flex justify-center space-x-4">
         <a
           href="#"
