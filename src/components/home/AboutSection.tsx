@@ -41,27 +41,44 @@ const AboutSection = () => {
   // 경력 사항
   const experiences = [
     {
-      period: "2020 - 현재",
-      company: "ABC 기업",
-      position: "풀스택 솔루션 개발자",
+      period: "2025.05 - 현재",
+      position: "부산은행 단기채권 시스템",
+      project: "한국 클라우드",
       description:
-        "기업 ERP 솔루션 개발 및 유지보수. Java Spring 기반 백엔드 구축 및 Oracle DB 최적화 작업 진행.",
+        "부산은행의 단기채권 시스템을 클라우드로 이전하는 프로젝트에 참여. Spring Boot 기반의 REST API를 구축. 데이터베이스 마이그레이션 및 성능 최적화 작업 수행.",
       technologies: ["Java", "Spring Boot", "Oracle", "Redis", "Docker"],
     },
     {
-      period: "2018 - 2020",
-      company: "XYZ 소프트웨어",
-      position: "풀스택 개발자",
+      period: "2024.05 - 현재",
+      position:
+        "건설근로자 공제회 고도화 작업/데이터베이스 마이그레이션/EAI 연동",
+      project: "한국 클라우드",
       description:
-        "인사관리 시스템 개발. 백엔드 API 설계 및 프론트엔드 구현. MySQL 기반 데이터베이스 설계 및 관리.",
-      technologies: ["JavaScript", "Vue.js", "Node.js", "MySQL", "Git"],
+        "공제회 내부 CRM 시스템 고도화 및 클라우드 이전 프로젝트에 참여. Spring Boot 기반 REST API 구축과 Redis 캐시 처리로 응답 속도 개선. EAI 시스템과의 연동을 통해 데이터 흐름 최적화.",
+      technologies: ["Java", "Spring Boot", "Oracle", "Redis", "Docker"],
     },
     {
-      period: "2016 - 2018",
-      company: "스타트업 테크",
-      position: "주니어 개발자",
+      period: "2023 - 2024",
+      position: "보스톤 사이언티픽 코리아",
+      project: "그레이 소프트",
       description:
-        "웹 애플리케이션 개발 및 유지보수. RESTful API 설계 및 구현. 데이터베이스 관리 및 성능 최적화.",
+        "글로벌 의료기기 회사의 내부 시스템 통합 프로젝트 수행. 복잡한 업무 로직을 Java 기반 백엔드로 구현하고, 배치프로그램 개발. Spring Batch를 활용한 대량 데이터 처리 및 스케줄링. REALGRID 시스템과의 연동을 통한 데이터 통합.",
+      technologies: ["Java", "Spring Boot", "Oracle", "Redis", "Docker"],
+    },
+    {
+      period: "2022 - 2023",
+      position: "이수시스템 웹/앱 유지보수",
+      project: "그레이 소프트",
+      description:
+        "인사 시스템의 유지보수 및 기능 개선 업무 담당. RESTful API 설계, 프론트엔드와의 연동을 위한 Ajax 통신 처리, 복잡한 SQL 튜닝을 통한 조회 속도 30% 향상. 사용자 요구사항 기반 신규 기능 개발.",
+      technologies: ["Java", "Spring MVC", "JavaScript", "jQuery", "MSSQL"],
+    },
+    {
+      period: "2022.04 - 2022.08",
+      position: "더존ERP 구축 프로젝트 참여",
+      project: "그레이 소프트",
+      description:
+        "중소기업 대상 ERP 시스템 구축 프로젝트에 투입되어 회계/구매/인사 모듈 기능 개발. 화면 UI 구현 및 DB 연동, 초기 개발 가이드를 수립하며 표준화에 기여.",
       technologies: ["Java", "Spring MVC", "JavaScript", "jQuery", "MSSQL"],
     },
   ];
@@ -269,7 +286,7 @@ const AboutSection = () => {
                             {exp.position}
                           </h3>
                           <h4 className="text-md text-gray-700 dark:text-gray-300 mb-2">
-                            {exp.company}
+                            {exp.project}
                           </h4>
                           <p className="text-gray-600 dark:text-gray-400 mb-3">
                             {exp.description}
